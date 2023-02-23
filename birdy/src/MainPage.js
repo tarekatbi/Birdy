@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import NavigationPanel from './NavigationPanel';
+import Signin from "./Signin"
+
 
 function MainPage() {
   const [currentPage, setCurrentPage] = useState('signin_page');
@@ -12,13 +14,15 @@ function MainPage() {
   }
 
   const setLogout = () => {
-    setUserIsConnected(False);
+    setUserIsConnected(false);
     setCurrentPage('signin_page');
   }
 
   return (
+    
     <div>
-        <NavigationPanel login={getConnected} logout={setLogout} userIsConnected={userIsConnected}/>
+      {currentPage==="signin_page"? <Signin /> :
+        <NavigationPanel login={getConnected} logout={setLogout} userIsConnected={userIsConnected}/>}
     </div>
   );
 }

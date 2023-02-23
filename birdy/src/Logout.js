@@ -1,6 +1,6 @@
 // composant Logout
 // className pour le style
-import 'MainPage'
+import './MainPage'
 
 function Logout(props){
     return (
